@@ -10,8 +10,8 @@
 
 Репозиторий содержит 2 директории:
 * Директория FinalProject - содержит классы страниц, различные методы и сам тест,
-* Директория resources - содержит chromedriver для Google Chrome и Selenium.
-
+* Директория resources - содержит chromedriver для Google Chrome и Selenium,
+* Директория .idea - содержит временные файлы.
 
 ### Цель: ###
 
