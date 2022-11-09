@@ -29,7 +29,7 @@ class Base():
     def get_screenshot(self):
         current_date = datetime.datetime.today().strftime("Date %d-%m-%y, Time %H-%M-%S")
         name_screenshot = 'Screenshot ' + current_date + '.png'
-        self.driver.save_screenshot('/home/unbreakunchain/TestTools/PyCharm/FinalProject/screen/' + name_screenshot)
+        self.driver.save_screenshot('/home/unbreakunchain/LocalGit/FinalProject/screen/' + name_screenshot)
         print("Создан Скриншот Страницы: " + name_screenshot)
 
 

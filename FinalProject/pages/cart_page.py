@@ -46,4 +46,7 @@ class Cart_Page(Base):
     def buy_product(self):
         self.assert_word(self.get_final_price, "178000")
         self.assert_word(self.get_final_quantity, "1")
-        self.click_arrange_product()
+
+        # ассерты провести и причесать проект, затем аллюр и фикстуры пайтеста бахнуть
+
+        print("Тест успещно завершён!")

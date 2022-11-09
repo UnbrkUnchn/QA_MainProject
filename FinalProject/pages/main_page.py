@@ -20,8 +20,8 @@ class Main_Page(Base):
     login_menu = "noindex div[data-zone-name='headerLoginButton']"
     search_field = "#header-search"
     catalog = "#catalogPopupButton"
-    category_notebooks_and_PC = "div ul li[data-zone-data='{\"id\":\"97009164\"}']"
-    category_notebooks = "li div a[data-tid='9f4dba48 a0dedf54 9b0f1b47']"
+    c_nbs_and_pc = "div ul li[data-zone-data='{\"id\":\"97009164\"}']"
+    c_nbs = "li div a[data-tid='9f4dba48 a0dedf54 9b0f1b47']"
 
 
     # Геттеры
@@ -35,11 +35,11 @@ class Main_Page(Base):
     def get_catalog(self):
         return WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable((By.CSS_SELECTOR, self.catalog)))
 
-    def get_category_notebooks_and_PC(self):
-        return WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable((By.CSS_SELECTOR, self.category_notebooks_and_PC)))
+    def get_category_notebooks_and_pc(self):
+        return WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable((By.CSS_SELECTOR, self.c_nbs_and_pc)))
 
     def get_category_notebooks(self):
-        return WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable((By.CSS_SELECTOR, self.category_notebooks)))
+        return WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable((By.CSS_SELECTOR, self.c_nbs)))
 
 
     # Действия
@@ -52,8 +52,8 @@ class Main_Page(Base):
         self.get_catalog().click()
         print("Нажатие на Кнопку: 'Каталог'")
 
-    def click_category_notebooks_and_PC(self):
-        self.get_category_notebooks_and_PC().click()
+    def click_category_notebooks_and_pc(self):
+        self.get_category_notebooks_and_pc().click()
         print("Нажатие на Кнопку: 'Ноутбуки и Компьютеры'")
 
     def click_category_notebooks(self):
@@ -72,5 +72,5 @@ class Main_Page(Base):
 
     def type_product(self):
         self.click_catalog()
-        self.click_category_notebooks_and_PC()
+        self.click_category_notebooks_and_pc()
         self.click_category_notebooks()

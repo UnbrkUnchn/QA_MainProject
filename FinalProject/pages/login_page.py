@@ -36,7 +36,7 @@ class Login_Page(Base):
     # Действия
 
     def input_login(self, email):
-        self.get_login().send_keys(email)
+        self.get_login().send_keys(email)  # возможно сделать переключение принудительное на ввод почты
         print("Ввод Логина")
 
     def input_password(self, password):
@@ -55,6 +55,6 @@ class Login_Page(Base):
         self.click_login_button()
         self.input_password("***")  # ПАРОЛЬ ДЛЯ ВХОДА
         self.click_login_button()
-        time.sleep(2)
+        time.sleep(3)
         self.get_current_url()
         self.assert_url("https://market.yandex.ru/?no-pda-redir=1&loggedin=1")
