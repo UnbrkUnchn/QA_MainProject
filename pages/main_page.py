@@ -3,7 +3,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
 
-from FinalProject.base.base_class import Base
+from base.base_class import Base
 
 """Главная Страница Яндекс Маркета"""
 

@@ -3,21 +3,21 @@ import pytest
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 
-from FinalProject.pages.main_page import Main_Page
-from FinalProject.pages.login_page import Login_Page
-from FinalProject.pages.catalog_page import Catalog_Page
-from FinalProject.pages.cart_page import Cart_Page
+from pages.main_page import Main_Page
+from pages.login_page import Login_Page
+from pages.catalog_page import Catalog_Page
+from pages.cart_page import Cart_Page
 
 
 """Шаги теста"""
 
 """Тест Полной Проверки Бизнес Логики YandexMarket"""
 
-@pytest.fixture()
-def test_buy_product(set_up):
+@pytest.mark.run(order=1)
+def test_buy_product(set_group, set_up):
     options = Options()
     options.add_experimental_option('excludeSwitches', ['enable-logging'])
-    driver = webdriver.Chrome(executable_path='/home/unbreakunchain/LocalGit/resources/chromedriver', chrome_options=options)
+    driver = webdriver.Chrome(executable_path='/home/unbreakunchain/Repo/resources/chromedriver', chrome_options=options)
 
     mp = Main_Page(driver)
     mp.start_test()

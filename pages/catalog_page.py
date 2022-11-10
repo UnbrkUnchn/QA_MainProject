@@ -4,7 +4,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
 
-from FinalProject.base.base_class import Base
+from base.base_class import Base
 
 """Страница Каталога Яндекс Маркета"""
 
@@ -43,7 +43,7 @@ class Catalog_Page(Base):
     dd_ssd = "div[data-filter-id='37699290'] button"  # Ниспадающее меню Кнопки
     ssd = "div label[id='39025848']"  # Общий объём накопителей SSD
     show_btn = "div a[class='_2qvOO _3qN-v _1Rc6L']"  # Показать предложения
-    add_notebook = "[class='_1Jo-W cia-vs cia-cs'] [class*='_2CQi1 pvpsJ']"
+    add_notebook = "[class='_1Jo-W cia-vs cia-cs'] [class*='_2CQi1 pvpsJ']"  #  селектор работает на 2 элемента
     cart = "div[data-apiary-widget-name='@market/CartEntryPoint']"  # Корзина
 
 

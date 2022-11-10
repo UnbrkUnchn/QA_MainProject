@@ -3,7 +3,7 @@ import os
 
 
 class Logger():
-    file_name = f"C:\\Users\\Acer\\PycharmProjects\\main_project\\logs\\log_" + \
+    file_name = f"home/unbreanunchain/Repo/logs/log_" + \
                 str(datetime.datetime.now().strftime("%Y-%m-%d_%H-%M-%S")) + ".log"
 
     @classmethod

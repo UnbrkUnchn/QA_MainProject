@@ -3,7 +3,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
 
-from FinalProject.base.base_class import Base
+from base.base_class import Base
 
 """Страница Авторизации Яндекс Маркета"""
 
@@ -60,9 +60,9 @@ class Login_Page(Base):
 
     def authorization(self):
         self.click_login_menu()
-        self.input_login("*******")  # ЛОГИН ДЛЯ ВХОДА
+        self.input_login("***")  # ЛОГИН ДЛЯ ВХОДА
         self.click_sign_in_button()
-        self.input_password("*******")  # ПАРОЛЬ ДЛЯ ВХОДА
+        self.input_password("***")  # ПАРОЛЬ ДЛЯ ВХОДА
         self.click_sign_in_button()
         self.get_current_url()
         self.assert_url(

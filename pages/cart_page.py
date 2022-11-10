@@ -1,5 +1,5 @@
 
-from FinalProject.base.base_class import Base
+from base.base_class import Base
 
 """Страница Корзины Яндекс Маркета"""
 
