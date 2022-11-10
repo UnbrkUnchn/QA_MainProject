@@ -60,9 +60,9 @@ class Login_Page(Base):
 
     def authorization(self):
         self.click_login_menu()
-        self.input_login("woolfs38@gmail.com")  # ЛОГИН ДЛЯ ВХОДА
+        self.input_login("*******")  # ЛОГИН ДЛЯ ВХОДА
         self.click_sign_in_button()
-        self.input_password("benihime38rus")  # ПАРОЛЬ ДЛЯ ВХОДА
+        self.input_password("*******")  # ПАРОЛЬ ДЛЯ ВХОДА
         self.click_sign_in_button()
         self.get_current_url()
         self.assert_url(
