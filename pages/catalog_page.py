@@ -7,6 +7,7 @@ from selenium.webdriver.support.wait import WebDriverWait
 from base.base_class import Base
 from utilities.logger import Logger
 
+
 """Страница Каталога Яндекс Маркета"""
 
 class Catalog_Page(Base):

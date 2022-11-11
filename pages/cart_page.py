@@ -2,6 +2,7 @@
 from base.base_class import Base
 from utilities.logger import Logger
 
+
 """Страница Корзины Яндекс Маркета"""
 
 class Cart_Page(Base):
