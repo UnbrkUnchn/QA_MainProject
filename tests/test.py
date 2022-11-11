@@ -14,7 +14,7 @@ from pages.cart_page import Cart_Page
 """Тест Полной Проверки Бизнес Логики YandexMarket"""
 
 @pytest.mark.run(order=1)
-def test_buy_product(set_group, set_up):
+def test_buy_product(set_up):
     options = Options()
     options.add_experimental_option('excludeSwitches', ['enable-logging'])
     driver = webdriver.Chrome(executable_path='/home/unbreakunchain/Repo/resources/chromedriver', chrome_options=options)

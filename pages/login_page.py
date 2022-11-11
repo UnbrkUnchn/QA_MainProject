@@ -4,6 +4,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
 
 from base.base_class import Base
+from utilities.logger import Logger
 
 """Страница Авторизации Яндекс Маркета"""
 
@@ -59,6 +60,7 @@ class Login_Page(Base):
     # Методы
 
     def authorization(self):
+        Logger.add_start_step(method="authorization")
         self.click_login_menu()
         self.input_login("***")  # ЛОГИН ДЛЯ ВХОДА
         self.click_sign_in_button()
@@ -68,3 +70,4 @@ class Login_Page(Base):
         self.assert_url(
             "https://passport.yandex.ru/auth/welcome?origin=market_desktop_header"
             "&retpath=https%3A%2F%2Fmarket.yandex.ru%2F%3Fno-pda-redir%3D1%26loggedin%3D1")
+        Logger.add_end_step(url=self.driver.current_url, method="authorization")

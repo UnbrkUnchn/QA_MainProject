@@ -5,6 +5,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
 
 from base.base_class import Base
+from utilities.logger import Logger
 
 """Страница Каталога Яндекс Маркета"""
 
@@ -240,6 +241,7 @@ class Catalog_Page(Base):
     # Методы
 
     def choosing_product(self):
+        Logger.add_start_step(method="choosing_product")
         self.click_all_filtres_btn()
         self.input_min_price("150000")
         self.input_max_price("200000")
@@ -257,3 +259,4 @@ class Catalog_Page(Base):
         self.click_show_btn()
         self.click_add_notebook()
         self.click_cart()
+        Logger.add_end_step(url=self.driver.current_url, method="choosing_product")
