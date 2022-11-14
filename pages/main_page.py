@@ -1,4 +1,4 @@
-
+import allure
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
@@ -67,20 +67,23 @@ class Main_Page(Base):
     # Методы
 
     def start_test(self):
-        Logger.add_start_step(method="start_test")
-        self.driver.get(self.url)
-        print("Открываем в браузере URL: " + self.url)
-        self.driver.maximize_window()
-        Logger.add_end_step(url=self.driver.current_url, method="start_test")
+        with allure.step("Start Test"):
+            Logger.add_start_step(method="start_test")
+            self.driver.get(self.url)
+            print("Открываем в браузере URL: " + self.url)
+            self.driver.maximize_window()
+            Logger.add_end_step(url=self.driver.current_url, method="start_test")
 
     def login_page(self):
-        Logger.add_start_step(method="login_page")
-        self.click_login_menu()
-        Logger.add_end_step(url=self.driver.current_url, method="login_page")
+        with allure.step("Login Page"):
+            Logger.add_start_step(method="login_page")
+            self.click_login_menu()
+            Logger.add_end_step(url=self.driver.current_url, method="login_page")
 
     def type_product(self):
-        Logger.add_start_step(method="type_product")
-        self.click_catalog()
-        self.click_category_notebooks_and_pc()
-        self.click_category_notebooks()
-        Logger.add_end_step(url=self.driver.current_url, method="type_product")
+        with allure.step("Type Product"):
+            Logger.add_start_step(method="type_product")
+            self.click_catalog()
+            self.click_category_notebooks_and_pc()
+            self.click_category_notebooks()
+            Logger.add_end_step(url=self.driver.current_url, method="type_product")

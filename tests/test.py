@@ -1,4 +1,4 @@
-
+import allure
 import pytest
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
@@ -14,6 +14,7 @@ from pages.cart_page import Cart_Page
 """Тест Полной Проверки Бизнес Логики YandexMarket"""
 
 @pytest.mark.run(order=1)
+@allure.description("Test Buy Product")
 def test_buy_product(set_up):
     options = Options()
     options.add_experimental_option('excludeSwitches', ['enable-logging'])

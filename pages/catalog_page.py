@@ -1,4 +1,4 @@
-
+import allure
 from selenium.webdriver import ActionChains
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
@@ -242,22 +242,23 @@ class Catalog_Page(Base):
     # Методы
 
     def choosing_product(self):
-        Logger.add_start_step(method="choosing_product")
-        self.click_all_filtres_btn()
-        self.input_min_price("150000")
-        self.input_max_price("200000")
-        self.click_condition()
-        self.click_notebook_name()
-        self.click_notebook_series()
-        self.click_resolution()
-        self.click_fresh_rate()
-        self.click_cpu()
-        # self.click_cpu_cores()
-        # self.click_ram()
-        # self.click_gpu()
-        # self.click_vram()
-        self.click_ssd()
-        self.click_show_btn()
-        self.click_add_notebook()
-        self.click_cart()
-        Logger.add_end_step(url=self.driver.current_url, method="choosing_product")
+        with allure.step("Choosing Product"):
+            Logger.add_start_step(method="choosing_product")
+            self.click_all_filtres_btn()
+            self.input_min_price("150000")
+            self.input_max_price("200000")
+            self.click_condition()
+            self.click_notebook_name()
+            self.click_notebook_series()
+            self.click_resolution()
+            self.click_fresh_rate()
+            self.click_cpu()
+            # self.click_cpu_cores()
+            # self.click_ram()
+            # self.click_gpu()
+            # self.click_vram()
+            self.click_ssd()
+            self.click_show_btn()
+            self.click_add_notebook()
+            self.click_cart()
+            Logger.add_end_step(url=self.driver.current_url, method="choosing_product")

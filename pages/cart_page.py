@@ -1,4 +1,4 @@
-
+import allure
 from base.base_class import Base
 from utilities.logger import Logger
 
@@ -13,10 +13,11 @@ class Cart_Page(Base):
 
 
     def buy_product(self):
-        Logger.add_start_step(method="buy_product")
-        self.get_current_url()
-        self.assert_url("https://market.yandex.ru/my/cart")
-        self.get_screenshot()
-        print("Ноутбук куплен(Условно)")
-        print("Тест успешно завершён!")
-        Logger.add_end_step(url=self.driver.current_url, method="buy_product")
+        with allure.step("Buy Product"):
+            Logger.add_start_step(method="buy_product")
+            self.get_current_url()
+            self.assert_url("https://market.yandex.ru/my/cart")
+            self.get_screenshot()
+            print("Ноутбук куплен(Условно)")
+            print("Тест успешно завершён!")
+            Logger.add_end_step(url=self.driver.current_url, method="buy_product")

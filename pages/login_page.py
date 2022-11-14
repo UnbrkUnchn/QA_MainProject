@@ -1,4 +1,4 @@
-
+import allure
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
@@ -61,14 +61,15 @@ class Login_Page(Base):
     # Методы
 
     def authorization(self):
-        Logger.add_start_step(method="authorization")
-        self.click_login_menu()
-        self.input_login("***")  # ЛОГИН ДЛЯ ВХОДА
-        self.click_sign_in_button()
-        self.input_password("***")  # ПАРОЛЬ ДЛЯ ВХОДА
-        self.click_sign_in_button()
-        self.get_current_url()
-        self.assert_url(
-            "https://passport.yandex.ru/auth/welcome?origin=market_desktop_header"
-            "&retpath=https%3A%2F%2Fmarket.yandex.ru%2F%3Fno-pda-redir%3D1%26loggedin%3D1")
-        Logger.add_end_step(url=self.driver.current_url, method="authorization")
+        with allure.step("Authorization"):
+            Logger.add_start_step(method="authorization")
+            self.click_login_menu()
+            self.input_login("ilia.konarev38rus@yandex.ru")  # ЛОГИН ДЛЯ ВХОДА
+            self.click_sign_in_button()
+            self.input_password("Wh4tH4veYouDone38rus")  # ПАРОЛЬ ДЛЯ ВХОДА
+            self.click_sign_in_button()
+            self.get_current_url()
+            self.assert_url(
+                "https://passport.yandex.ru/auth/welcome?origin=market_desktop_header"
+                "&retpath=https%3A%2F%2Fmarket.yandex.ru%2F%3Fno-pda-redir%3D1%26loggedin%3D1")
+            Logger.add_end_step(url=self.driver.current_url, method="authorization")
